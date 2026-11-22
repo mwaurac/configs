@@ -1,0 +1,147 @@
+@define-color base00 #181818;
+@define-color base01 #2b2e37;
+@define-color base02 #3b3e47;
+@define-color base03 #585858;
+@define-color base04 #b8b8b8;
+@define-color base05 #d8d8d8;
+@define-color base06 #e8e8e8;
+@define-color base07 #f8f8f8;
+@define-color base08 #ab4642;
+@define-color base09 #dc9656;
+@define-color base0A #f7ca88;
+@define-color base0B #a1b56c;
+@define-color base0C #86c1b9;
+@define-color base0D #7cafc2;
+@define-color base0E #ba8baf;
+@define-color base0F #a16946;
+
+* {
+  font-family: 'FiraCode Nerd Font', 'Fira Code';
+  font-size: 1.0em;
+  font-weight: 400;
+  transition: none;
+  box-shadow: none;
+  text-shadow: none;
+  min-height: 0;
+}
+
+/* Floating bar shell */
+window#waybar {
+  background: transparent;
+}
+
+#waybar {
+  background: @base00;
+  color: @base05;
+  border-radius: 0.55em;
+}
+
+/* Shared pill treatment for every module group */
+#workspaces,
+#clock,
+#cpu,
+#network,
+#tray,
+#pulseaudio,
+#battery,
+#custom-mako {
+  background: @base01;
+  border-radius: 0.45em;
+  margin: 0.18em 0.12em;
+}
+
+#workspaces {
+  padding: 0 0.15em;
+}
+
+#workspaces button {
+  padding: 0 0.45em;
+  margin: 0.10em 0.08em;
+  color: @base04;
+  border-radius: 0.35em;
+  min-width: 0.55em;
+}
+
+#workspaces button.visible {
+  color: @base06;
+}
+
+#workspaces button.active {
+  background-color: @base0D;
+  color: @base00;
+  font-weight: 700;
+}
+
+#workspaces button.urgent {
+  background-color: @base08;
+  color: @base07;
+}
+
+#workspaces button:hover {
+  background-color: @base02;
+  color: @base06;
+}
+
+#clock {
+  color: @base0D;
+  font-weight: 700;
+  padding: 0 0.65em;
+}
+
+#cpu {
+  color: @base0A;
+  padding: 0 0.45em;
+}
+
+#network {
+  color: @base0C;
+  padding: 0 0.45em;
+}
+
+#network.disconnected {
+  color: @base03;
+}
+
+#tray {
+  padding: 0 0.45em;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+}
+
+#pulseaudio {
+  color: @base0E;
+  padding: 0 0.45em;
+}
+
+#pulseaudio.muted {
+  color: @base03;
+}
+
+#battery {
+  color: @base0B;
+  padding: 0 0.45em;
+}
+
+#battery.warning {
+  color: @base09;
+}
+
+#battery.critical {
+  color: @base08;
+  font-weight: 700;
+}
+
+#battery.charging {
+  color: @base0C;
+}
+
+#custom-mako {
+  color: @base04;
+  padding: 0 0.45em;
+}
